@@ -63,6 +63,15 @@ exports.io = {
 };
 ```
 
+#### ws
+```js
+exports.io = {
+  // must be removed，Socket.io@4 will report an error `this.opts.wsEngine is not a constructor`
+  // https://github.com/socketio/socket.io/issues/3859
+  // init: { wsEngine: 'ws' },
+};
+```
+
 #### uws
 
 **Egg's socket is using `ws`, [uws](https://www.npmjs.com/package/uws) is deprecated due to [some reasons](https://github.com/socketio/socket.io/issues/3319).**

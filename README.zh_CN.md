@@ -63,6 +63,15 @@ exports.io = {
 };
 ```
 
+#### ws
+```js
+exports.io = {
+  // 下面必去掉，不然socket.io 版本4会报错`this.opts.wsEngine is not a constructor`
+  // https://github.com/socketio/socket.io/issues/3859
+  // init: { wsEngine: 'ws' },
+};
+```
+
 #### uws
 
 **Egg Socket 内部默认使用 `ws` 引擎，[uws](https://www.npmjs.com/package/uws) 因为[某些原因](https://github.com/socketio/socket.io/issues/3319)被废止。**
