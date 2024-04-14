@@ -1,4 +1,4 @@
-# egg-socket.io
+# egg-socket.io-new
 
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
@@ -41,7 +41,7 @@ Change `${app_root}/config/plugin.js` to enable Socket.IO plugin:
 // {app_root}/config/plugin.js
 exports.io = {
   enable: true,
-  package: 'egg-socket.io',
+  package: 'egg-socket.io-new',
 };
 ```
 

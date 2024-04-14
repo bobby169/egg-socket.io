@@ -1,4 +1,4 @@
-# egg-socket.io
+# egg-socket.io-new
 
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
@@ -25,7 +25,7 @@ egg 框架的 socket.io@4.x 插件
 ## 安装
 
 ```bash
-$ npm i egg-socket.io --save
+$ npm i egg-socket.io-new --save
 ```
 
 ## 环境要求
