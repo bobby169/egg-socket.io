@@ -20,18 +20,18 @@
 [download-image]: https://img.shields.io/npm/dm/egg-socket.io.svg?style=flat-square
 [download-url]: https://npmjs.org/package/egg-socket.io
 
-egg plugin for socket.io
+egg plugin for socket.io@4.x
 
 ## Install
 
 ```bash
-$ npm i egg-socket.io --save
+$ npm i egg-socket.io-new --save
 ```
 
 ## Requirements
 
-- Node.js >= 8.0
-- Egg.js >= 2.0
+- Node.js >= 14.0
+- Egg.js >= 3.0
 
 ## Configuration
 
