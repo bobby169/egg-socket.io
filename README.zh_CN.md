@@ -78,17 +78,35 @@ exports.io = {
 - 有关更多 `init` 选项配置，请参考：[engine.io](https://github.com/socketio/engine.io/blob/master/README.md#methods-1) 。
 - 有关更多 `Egg Socket` 相关默认配置，请参考：[config.default.js](config/config.default.js)。
 
-### generateId
+### Socket.id 生成规则
 
-**注意：** 此函数作为接口预留，便于你按照自己的规则为每一个 socket 生成唯一的 ID：
+**注意：** 当前版本的 Socket.IO 并不支持直接通过覆盖函数的方式来自定义 `id` 生成规则，所以我们只能通过 [中间件](#中间件)的方式来实现。
+
+例如我们在 middleware 文件夹里定义了一个 `generateId.js` 文件，并有如下代码：
+
+```js
+module.exports = app => {
+    return async (ctx, next) => {
+        // Here you can generate a unique ID for ctx.socket.id
+        // This is only a sample
+        // you can also get 'request' through 'ctx.request'
+        ctx.socket.id = '1234567890';
+        await next();
+    };
+};
+```
+
+你的主程序的配置文件（config.default.js）中引用这个中间件：
 
 ```js
 exports.io = {
-  generateId: (request) => {
-        // Something like UUID.
-        return 'This should be a random unique ID';
+    namespace: {
+        '/': {
+            connectionMiddleware: ['generateId'],
+        },
     }
 };
+
 ```
 
 ## 部署
