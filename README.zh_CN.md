@@ -87,7 +87,7 @@ exports.io = {
 - 有关更多 `init` 选项配置，请参考：[engine.io](https://github.com/socketio/engine.io/blob/master/README.md#methods-1) 。
 - 有关更多 `Egg Socket` 相关默认配置，请参考：[config.default.js](config/config.default.js)。
 
-### Socket.id 生成规则
+### ~~Socket.id 生成规则~~ Socket.io 4.x 版本SocketId为readonly只读，不应该被修改。
 
 **注意：** 当前版本的 Socket.IO 并不支持直接通过覆盖函数的方式来自定义 `id` 生成规则，所以我们只能通过 [中间件](#中间件)的方式来实现。
 
@@ -99,7 +99,8 @@ module.exports = app => {
         // Here you can generate a unique ID for ctx.socket.id
         // This is only a sample
         // you can also get 'request' through 'ctx.request'
-        ctx.socket.id = '1234567890';
+        // ctx.socket.id is readonly
+        // ctx.socket.id = '1234567890';
         await next();
     };
 };
