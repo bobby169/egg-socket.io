@@ -1,6 +1,6 @@
 {
   "name": "egg-socket.io-new",
-  "version": "5.0.3",
+  "version": "5.0.5",
   "description": "egg plugin for socket.io",
   "eggPlugin": {
     "name": "io",
@@ -21,7 +21,8 @@
     "is-type-of": "^1.2.1",
     "koa-compose": "^4.1.0",
     "socket.io": "^4.7.5",
-    "socket.io-redis": "^5.2.0"
+    "@socket.io/redis-adapter": "^8.3.0",
+    "ioredis": "^5.4.1"
   },
   "devDependencies": {
     "@types/node": "^10.9.4",

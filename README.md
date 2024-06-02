@@ -317,7 +317,7 @@ exports.io = {
   redis: {
     host: { redis server host },
     port: { redis server prot },
-    auth_pass: { redis server password },
+    password: { redis server password },
     db: 0,
   }
 };
