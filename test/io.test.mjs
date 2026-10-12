@@ -515,6 +515,16 @@ describe('test/socketio.test.mjs', () => {
     });
   });
 
+  describe('lifecycle', () => {
+    it('should register namespaces in willReady instead of didLoad', async () => {
+      // didLoad 可能在 loader 执行途中就被调用，此时 app.middleware（含 session 中间件）
+      // 还是空的，会把 undefined 塞进 koa-compose；必须等到 willReady。
+      const { default: IOAppBoot } = await import('../lib/io.js');
+      assert.strictEqual(typeof IOAppBoot.prototype.didLoad, 'undefined');
+      assert.strictEqual(typeof IOAppBoot.prototype.willReady, 'function');
+    });
+  });
+
   describe('namespace', () => {
     it('should namespace works ok', done => {
       const app = cluster('apps/socket.io-ns', {

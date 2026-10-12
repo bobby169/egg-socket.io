@@ -1,3 +1,21 @@
+6.0.1 / 2026-10-12
+==================
+
+  * fix: 命名空间注册从 `didLoad` 改到 `willReady`。`didLoad` 有可能在 loader 执行中途就被调用
+    （此时 `app.middleware` 还是空的），会把 `undefined` 交给 koa-compose 导致应用启动失败。
+
+6.0.0 / 2026-10-12
+==================
+
+  * feat: [BREAKING] 支持 Egg 4（`@eggjs/core` 7.x）：插件入口改为 Boot 类
+    （`configDidLoad` / `willReady`）、去掉 `egg-core` 幽灵依赖、
+    控制器加载复用 egg 的 `loadController`（Egg 4 的 `loadToApp` 不再支持自定义 target）、
+    控制器 / 中间件异步加载完成后再注册命名空间。
+  * feat: [BREAKING] 移除 generator 控制器与中间件支持（Egg 4 已移除；使用时会给出明确报错）。
+  * fix: 同步返回的控制器方法不再抛未捕获异常（恢复 egg-core `callFn` 的 Promise 语义）。
+  * deps: `ioredis` ^5.4.1 -> ^6.0.0、`is-type-of` ^1.2.1 -> ^2.2.0。
+  * deps: 开发 / 测试工具链迁移到 `egg@^4.2.0` + `@eggjs/bin` + `@eggjs/mock` + `vitest`，
+    `engines.node` 提升到 >= 22.18.0。
 
 4.1.6 / 2019-06-20
 ==================
