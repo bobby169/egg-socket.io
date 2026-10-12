@@ -1,10 +1,9 @@
 'use strict'
 
 module.exports = app => {
-  return function* (next) {
-    this.socket.on('anEventNotRegisterInTheRouter',()=> {
-    
+  return async (ctx, next) => {
+    ctx.socket.on('anEventNotRegisterInTheRouter', () => {
     })
-    yield* next
+    await next()
   }
 }

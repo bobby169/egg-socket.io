@@ -30,8 +30,8 @@ $ npm i egg-socket.io-new --save
 
 ## 环境要求
 
-- Node.js >= 14.0
-- Egg.js >= 3.0
+- Node.js >= 22.18
+- Egg.js >= 4.2
 
 ## 配置
 
@@ -72,17 +72,7 @@ exports.io = {
 };
 ```
 
-#### uws
-
-**Egg Socket 内部默认使用 `ws` 引擎，[uws](https://www.npmjs.com/package/uws) 因为[某些原因](https://github.com/socketio/socket.io/issues/3319)被废止。**
-
-如坚持需要使用，请按照以下配置即可：
-
-```js
-exports.io = {
-  init: { wsEngine: 'uws' },
-};
-```
+**注意：** `socket.io@4` 依赖的 `engine.io@6` 已移除 `wsEngine` 选项，因此无法再自定义 `uws` 等 WebSocket 引擎。
 
 - 有关更多 `init` 选项配置，请参考：[engine.io](https://github.com/socketio/engine.io/blob/master/README.md#methods-1) 。
 - 有关更多 `Egg Socket` 相关默认配置，请参考：[config.default.js](config/config.default.js)。

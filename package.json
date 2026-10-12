@@ -1,7 +1,7 @@
 {
   "name": "egg-socket.io-new",
-  "version": "5.0.6",
-  "description": "egg plugin for socket.io",
+  "version": "6.0.0",
+  "description": "egg plugin for socket.io (egg 4)",
   "eggPlugin": {
     "name": "io",
     "dependencies": [
@@ -18,43 +18,39 @@
   "dependencies": {
     "debug": "^4.1.0",
     "delegates": "^1.0.0",
-    "is-type-of": "^1.2.1",
+    "is-type-of": "^2.2.0",
     "koa-compose": "^4.1.0",
     "socket.io": "^4.7.5",
     "@socket.io/redis-adapter": "^8.3.0",
-    "ioredis": "^5.4.1"
+    "ioredis": "^6.0.0"
   },
   "devDependencies": {
-    "@types/node": "^10.9.4",
-    "@types/socket.io": "^3.0.1",
-    "autod": "^3.0.1",
-    "egg": "^2.12.0",
-    "egg-bin": "^4.9.0",
-    "egg-ci": "^1.10.0",
-    "egg-mock": "^3.20.1",
-    "egg-redis": "^2.0.0",
-    "egg-session-redis": "^2.1.0",
-    "eslint": "^5.8.0",
-    "eslint-config-egg": "^7.1.0",
+    "@eggjs/bin": "^8.1.0",
+    "@eggjs/mock": "^7.1.0",
+    "@eggjs/redis": "^4.1.0",
+    "@eggjs/session-redis": "^3.0.0",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.13.0",
+    "@types/node": "^24.0.0",
+    "@vitest/coverage-v8": "^5.0.3",
+    "egg": "^4.2.0",
+    "eslint": "^9.13.0",
+    "eslint-config-egg": "^14.1.0",
     "pedding": "^1.1.0",
-    "rimraf": "^2.6.2",
-    "semver": "^5.4.1",
     "socket.io-client": "^4.7.5",
-    "supertest": "^3.3.0",
-    "typescript": "^3.0.3",
-    "uws": "10.148.0",
-    "webstorm-disable-index": "^1.2.0"
+    "supertest": "^7.0.0",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.1"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=22.18.0"
   },
   "scripts": {
     "test": "npm run lint -- --fix && npm run test-local",
-    "test-local": "egg-bin test",
-    "cov": "egg-bin cov",
+    "test-local": "vitest run",
+    "cov": "vitest run --coverage",
     "lint": "eslint .",
-    "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
-    "autod": "autod"
+    "ci": "npm run lint && npm run cov"
   },
   "files": [
     "app",

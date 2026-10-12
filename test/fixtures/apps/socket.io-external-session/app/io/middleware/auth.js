@@ -6,13 +6,13 @@ module.exports = app => {
   if (fs.existsSync(app.config.disconnectFile)) {
     fs.unlinkSync(app.config.disconnectFile);
   }
-  return function* (next) {
-    if (!this.session.user) {
+  return async (ctx, next) => {
+    if (!ctx.session.user) {
       throw new Error('auth failed!');
     }
-    this.emit('join', app.config.disconnectFile);
+    ctx.emit('join', app.config.disconnectFile);
 
-    yield* next;
+    await next();
 
     fs.writeFileSync(app.config.disconnectFile, 'true');
   };

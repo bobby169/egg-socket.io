@@ -6,11 +6,14 @@
     "start": "egg-bin dev --cluster --sticky"
   },
   "dependencies": {
-    "egg": "^2.0.0",
-    "egg-socket.io": "^4.0.0",
-    "socket.io-client": "^2.0.1"
+    "egg": "^4.2.0",
+    "egg-socket.io-new": "^5.0.6",
+    "socket.io-client": "^4.7.5"
   },
   "devDependencies": {
-    "egg-bin": "^4.3.6"
+    "@eggjs/bin": "^8.1.0"
+  },
+  "engines": {
+    "node": ">=22.18.0"
   }
 }

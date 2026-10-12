@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = () => {
-  return function* () {
+  return async function () {
     this.socket.emit('res', 'hello');
   };
 };

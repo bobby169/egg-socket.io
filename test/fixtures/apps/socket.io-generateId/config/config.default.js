@@ -2,7 +2,7 @@
 
 exports.io = {
     generateId: (request) => {
-        return 'This should be a random unique ID';
+        return '1234567890';
     }
 };
 

@@ -5,10 +5,9 @@ declare module 'egg' {
         chatservice: ChatService;
     }
 }
-class ChatService extends Service {
+
+export default class ChatService extends Service {
     async chatting() {
         return 'from chatting service';
     }
 }
-
-export = ChatService;

@@ -5,10 +5,6 @@ module.exports = (app) => {
     ping() {
       this.ctx.socket.emit('res', 'hello');
     }
-
-    * pingGenerator() {
-      this.ctx.socket.emit('res', 'hello');
-    }
   }
   return Controller
 };

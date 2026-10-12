@@ -1,6 +1,6 @@
 import { Context } from 'egg';
 
-module.exports = () => {
+export default () => {
     return async (ctx: Context) => {
         ctx.socket.emit('onBefore', 'Before happens!');
     };

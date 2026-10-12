@@ -1,13 +1,12 @@
-'use strict';
-
-exports.io = {
-  namespace: {
-    '/': {
-      connectionMiddleware: ['middleware'],
-      packetMiddleware: ['packetware'],
+export default {
+  io: {
+    namespace: {
+      '/': {
+        connectionMiddleware: [ 'middleware' ],
+        packetMiddleware: [ 'packetware' ],
+      },
+      'ts_of': {},
     },
-    'ts_of': {}
-  }
+  },
+  keys: '123',
 };
-
-exports.keys = '123';

@@ -1,6 +1,6 @@
 import { Context } from 'egg';
 
-module.exports = () => {
+export default () => {
     return async (ctx: Context, next: Function) => {
         await next();
         ctx.socket.emit('onAfter', 'After happens!');

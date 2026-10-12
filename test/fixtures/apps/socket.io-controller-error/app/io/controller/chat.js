@@ -2,15 +2,15 @@
 
 module.exports = (app) => {
   class Controller extends app.Controller {
-    * index() {
+    async index() {
       throw new Error('Controller Error!');
     }
 
-    * disconnect() {
+    async disconnect() {
       throw new Error('Controller Disconnect!');
     }
 
-    * disconnecting() {
+    async disconnecting() {
       throw new Error('Controller Disconnecting!');
     }
   }

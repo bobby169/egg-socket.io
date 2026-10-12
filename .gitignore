@@ -5,6 +5,7 @@ coverage/
 .idea/
 .vscode/
 run/
+.egg/
 .DS_Store
 *.swp
 dump.rdb
